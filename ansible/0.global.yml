@@ -1,0 +1,7 @@
+---
+- import_playbook: 1.install-config-controller-microstack.yml
+- import_playbook: 2.config-controller-network-external-access.yml
+- import_playbook: 3.cosmos-sb2-load-baseline.yml
+- import_playbook: 4.cosmos-sb2-reboot-nodes.yml
+- import_playbook: 5.init-install-microstack.yml
+- import_playbook: 6.add-microstack-compute-nodes-testing.yml

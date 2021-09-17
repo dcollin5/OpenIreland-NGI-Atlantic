@@ -1,0 +1,16 @@
+---
+- hosts: controller
+  tasks:
+  - name: "Configure the OpenStack controller to allow external access"
+    command: microstack.openstack subnet set --dhcp external-subnet
+    command: microstack.openstack subnet set --dhcp test-subnet
+    command: microstack.openstack subnet set --dns-nameserver 134.226.32.57 external-subnet
+    command: microstack.openstack subnet set --dns-nameserver 134.226.32.57 test-subnet
+    command: microstack.openstack network set --share external
+    command: microstack.openstack network set --share test
+
+  - name: "Disable network port security for testbed/development environment"
+    command: microstack.openstack network set --disable-port-security  external
+    command: microstack.openstack network set --disable-port-security  test
+
+

@@ -9,4 +9,7 @@ sudo apt install ansible
 
 
 #to execute use the following:
+ansible-playbook -u <user> -b 3.init-install-microstack.yml
+
+example:
 ansible-playbook -u jerryoc -b 3.init-install-microstack.yml

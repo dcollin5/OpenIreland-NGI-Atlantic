@@ -1,0 +1,19 @@
+---
+- hosts: controller
+  tasks:
+  - name: "Generate a compute node connection string on controller"
+    command: microstack add-compute
+    register: computeid
+  - name: "Add temporary compute Token to controller host variable"
+    add_host:
+     name: "controller"
+     computeid: "{{ computeid.stdout }}"
+  - name: "Debug Print out compute id"
+    debug: "msg='{{ computeid.stdout }}'"
+- hosts: compute1
+  tasks:
+  - name: "Print out compute id provided by CONTROLLER node"
+    debug: "msg='{{ hostvars['controller']['computeid'] }}'"
+  - name: "Ask Compute node to join OpenStack Network"
+    command: microstack init --auto --compute --join "'{{ hostvars['controller']['computeid'] }}'"
+

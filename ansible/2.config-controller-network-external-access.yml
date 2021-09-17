@@ -1,3 +1,4 @@
+### Configure the network to allow experimenters access the Virtual Machines and external internet
 ---
 - hosts: controller
   tasks:

@@ -1,0 +1,21 @@
+###Expose PCI devices to OpenStack virtual machine instances. Copy this for each additional device required
+---
+- hosts: compute1
+  tasks:
+  - name: "Append line to end of nova-snap.conf config file "
+    lineinfile:
+      path: /var/snap/microstack/common/etc/nova/nova.conf.d/nova-snap.conf
+      line: '[pci]'
+      insertafter: EOF
+  - name: "Name device as object so OpenStack and OSM can locate"
+    lineinfile:
+      path: /var/snap/microstack/common/etc/nova/nova.conf.d/nova-snap.conf
+      line: 'alias = { "vendor_id":"14e4", "product_id":"16d8", "device_type":"type-PCI", "numa_policy":"required", "name":"eth1" }'
+      insertafter: EOF
+  - name: "White list of PCI devices available to VMs."
+    lineinfile:
+      path: /var/snap/microstack/common/etc/nova/nova.conf.d/nova-snap.conf
+      line: 'passthrough_whitelist = {"address":"*:5e:00.0"}'
+      insertafter: EOF
+
+

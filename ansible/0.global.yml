@@ -5,3 +5,4 @@
 - import_playbook: 4.cosmos-sb2-reboot-nodes.yml
 - import_playbook: 5.init-install-microstack.yml
 - import_playbook: 6.add-microstack-compute-nodes-testing.yml
+- import_playbook: 7.expose-pci-device.yml

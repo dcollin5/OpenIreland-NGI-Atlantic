@@ -1,3 +1,4 @@
+###The installation step consists solely of installing the MicroStack snap across all compute hosts
 ---
 - hosts: compute
   tasks:

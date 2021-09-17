@@ -1,3 +1,4 @@
+### Specify the IMAGE to use on the COSMOS testbed. Baseline.ndz is Ubuntu 18.04
 ---
 - hosts: cosmos-sb2
   tasks:

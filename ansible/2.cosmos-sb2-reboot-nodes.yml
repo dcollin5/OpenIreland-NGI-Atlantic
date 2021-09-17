@@ -1,0 +1,10 @@
+---
+- hosts: cosmos-sb2
+  tasks:
+          #  - name: stop sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
+          # command: omf tell -a offh -t sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
+          #tasks:
+  - name: start sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
+    command: omf tell -a on -t sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
+
+

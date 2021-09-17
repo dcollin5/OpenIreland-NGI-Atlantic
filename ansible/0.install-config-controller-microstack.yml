@@ -1,0 +1,9 @@
+---
+- hosts: controller
+  tasks:
+  - name: sudo microstack init --auto --control
+    snap:
+      name: microstack
+      channel: beta --devmode
+  - name: init controller node
+    command: microstack init --auto --control

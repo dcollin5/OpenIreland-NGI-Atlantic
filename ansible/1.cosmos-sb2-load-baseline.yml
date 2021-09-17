@@ -1,0 +1,5 @@
+---
+- hosts: cosmos-sb2
+  tasks:
+  - name: load baseline image on all cosmos nodes
+    command: omf load -t system:topo:all -i baseline.ndz

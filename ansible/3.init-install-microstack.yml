@@ -1,0 +1,7 @@
+---
+- hosts: compute
+  tasks:
+  - name: sudo microstack init --auto --control
+    snap:
+      name: microstack
+      channel: beta --devmode

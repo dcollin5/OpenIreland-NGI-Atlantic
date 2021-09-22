@@ -6,7 +6,7 @@
           # command: omf tell -a offh -t sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
           #tasks:
   - name: stop servers
-    command: omf tell -a offt -t sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
+    command: omf tell -a offh -t sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
   - name: start servers
     command: omf tell -a on -t sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
 

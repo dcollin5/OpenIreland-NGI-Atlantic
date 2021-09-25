@@ -1,6 +1,9 @@
 ### Specify the IMAGE to use on the COSMOS testbed. Baseline.ndz is Ubuntu 18.04
 ---
 - hosts: cosmos-sb2
+  become: no
   tasks:
+  - name: stop servers
+    command: omf tell -a offh -t sdr2-md1.sb2.cosmos-lab.org,sdr2-s1-lg1.sb2.cosmos-lab.org
   - name: load baseline image on all cosmos nodes
     command: omf load -t system:topo:all -i baseline.ndz -r 0

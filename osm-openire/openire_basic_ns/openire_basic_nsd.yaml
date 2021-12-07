@@ -1,0 +1,21 @@
+nsd:
+  nsd:
+  - description: Simple NS with a single VNF and a single VL
+    df:
+    - id: default-df
+      vnf-profile:
+      - id: '1'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: vnf-cp0-ext
+          virtual-link-profile-id: iris-provider
+        vnfd-id: openire_basic-vnf
+    id: openire_basic-ns
+    name: openire_basic-ns
+    version: '1.0'
+    virtual-link-desc:
+    - id: iris-provider
+      mgmt-network: true
+    vnfd-id:
+    - openire_basic-vnf
